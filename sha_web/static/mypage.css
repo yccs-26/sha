@@ -1,0 +1,84 @@
+/* mypage.css */
+
+/* 전체 페이지 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* 애플리케이션 컨테이너 */
+#app {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 마이페이지 컨테이너 */
+.mypage-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+/* 제목 스타일 */
+.mypage-container h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* 테이블 스타일 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+    color: #555;
+}
+
+td {
+    color: #333;
+}
+
+/* 비밀번호 변경 */
+.pwchange {
+    padding: 10px 20px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.pwchange:hover {
+    text-decoration: underline;
+}
+
+/* 버튼 */
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: underline;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='signupstyle.css') }}">
+</head>
+<body>
+    <div id="app">
+        <div class="signup-container">
+            <h2>회원가입</h2>
+            <form action="/signup" method="post" onsubmit="return validateForm()">
+                <div class="input-group">
+                    <label for="username">ID 입력</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="username" name="username" placeholder="ID" required>
+                        <button type="button" onclick="checkUsername()">ID 중복 체크</button>
+                    </div>
+                    <span id="username-message"></span>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password 입력</label>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirm-password">Password 확인</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Password 확인" required>
+                </div>
+                <div class="input-group">
+                    <label for="full_name">이름</label>
+                    <input type="text" id="full_name" name="full_name" placeholder="이름" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">이메일 입력</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="email" name="email" placeholder="이메일" required>
+                        <button type="button" onclick="checkEmail()">이메일 인증</button>
+                    </div>
+                    <span id="email-message"></span>
+                </div>
+                <div class="input-group" id="code-input-group" style="display:none;">
+                    <input type="text" id="email-code" name="email-code" placeholder="인증 코드" required>
+                </div>
+                
+                <input type="submit" value="회원가입">
+            </form>
+            <div class="or">또는</div>
+            <div class="login">
+                <a href="{{ url_for('login') }}">이미 회원이라면?</a>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='signup.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHA 게시판</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+    <div class="header">
+        <div class="title">
+            <h1>SHA 게시판</h1>
+        </div>
+        <div class="user-info">
+            <p>{{ username }}님</p>
+            <a href="{{ url_for('write') }}" class="write-btn">글쓰기</a>
+            <a href="{{ url_for('logout') }}" class="write-btn2">로그아웃</a>
+        </div>
+    </div>
+    <div class="content">
+        <table class="board">
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성자 ID</th>
+                    <th>작성 날짜</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in posts %}
+                <tr>
+                    <td>{{ post.post_number }}</td> <!-- 게시글 번호 -->
+                    <td><a href="{{ url_for('post', post_id=post['_id']) }}">{{ post.title }}</a></td>
+                    <td>{{ post.author }}</td> 
+                    <td>{{ post.date_posted.strftime('%Y-%m-%d %H:%M') if post.date_posted else '날짜 없음' }}</td> <!-- 작성 날짜 -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

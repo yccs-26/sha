@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sha-project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='indexstyle.css') }}">
+</head>
+<body>
+    <div id="app">
+        <div class="login-container">
+            <h2>로그인</h2>
+            <form action="/login" method="post">
+                <input type="text" id="username" name="username" placeholder="ID" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <input type="submit" value="제출">
+            </form>
+            <div class="or">또는</div>
+            <div class="signup">
+                <a href="{{ url_for('signup') }}">회원가입</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

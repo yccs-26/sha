@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>댓글</title>
+</head>
+<body>
+    <h1>댓글</h1>
+    <form method="POST" action="{{ url_for('edit_comment', comment_id=comment['_id']) }}">
+        <label for="content">Content:</label>
+        <textarea id="content" name="content" required>{{ comment['content'] }}</textarea><br>
+        <input type="submit" value="Update Comment">
+    </form>
+    <a href="{{ url_for('post', post_id=comment['post_id']) }}">뒤로가기</a>
+</body>
+</html>
